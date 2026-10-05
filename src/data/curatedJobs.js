@@ -1,30 +1,343 @@
 export const CURATED_JOBS = [
+  // --- INDIA & GLOBAL HIGHLIGHTS FOR STUDENTS ---
+  {
+    id: 'in-job-1',
+    title: 'Software Development Engineer Intern (Summer)',
+    company: 'Amazon India',
+    companyColor: 'from-amber-500 to-yellow-600',
+    category: 'software-eng',
+    country: 'India',
+    experienceLevel: 'internship',
+    workMode: 'hybrid',
+    location: 'Bengaluru / Hyderabad / Chennai',
+    salary: '₹80,000 / month + ₹25k Housing',
+    stipendRaw: 80000,
+    skills: ['Java', 'C++', 'Data Structures', 'Algorithms', 'OS', 'DBMS'],
+    batchEligibility: '2025 & 2026 B.Tech / B.E / M.Tech / MCA',
+    description: 'Amazon University Hiring is inviting applications for SDE Interns across Indian development centers. Work on AWS services, Prime Video, or retail ecommerce systems with senior SDE mentors.',
+    responsibilities: [
+      'Design, implement, and test scalable distributed services using Java or C++.',
+      'Collaborate on algorithmic optimization and high-concurrency microservices.',
+      'Participate in sprint retrospectives and peer code reviews.'
+    ],
+    qualifications: [
+      'Enrolled in B.Tech/B.E./M.Tech/MCA in Computer Science or related branch.',
+      'Deep grasp of Data Structures, Algorithms, Time Complexity, and OOP principles.',
+      'Strong problem-solving track record on LeetCode / Codeforces / GeeksforGeeks.'
+    ],
+    perks: ['Free Cab Facility', 'Comprehensive Medical Cover', 'PPO (Pre-Placement Offer) Track'],
+    postedDate: 'Today',
+    featured: true,
+    isUrgent: true,
+    applyUrl: 'https://www.amazon.jobs/en/locations/bangalore-india'
+  },
+  {
+    id: 'in-job-2',
+    title: 'TCS Digital / Prime Graduate Software Engineer',
+    company: 'Tata Consultancy Services (TCS)',
+    companyColor: 'from-blue-700 to-indigo-800',
+    category: 'software-eng',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'hybrid',
+    location: 'Pan India (Pune, Bangalore, Hyderabad, Delhi NCR, Chennai)',
+    salary: '₹7.0 - ₹9.2 LPA',
+    stipendRaw: 750000,
+    skills: ['Python', 'Java', 'SQL', 'Cloud Basics', 'Git', 'Data Structures'],
+    batchEligibility: '2024 & 2025 Batch (B.Tech / B.E / MCA / M.Sc)',
+    description: 'TCS Digital and Prime cadence hiring for high-performing engineering freshers. You will build cloud-native applications, AI enterprise integrations, and digital transformation platforms.',
+    responsibilities: [
+      'Develop modern web applications and microservices for global banking and retail clients.',
+      'Implement database models and RESTful APIs in Java Spring Boot or Python FastAPI.',
+      'Undergo intensive advanced digital tech immersion at TCS ILP.'
+    ],
+    qualifications: [
+      'Minimum 60% or 6.0 CGPA throughout 10th, 12th, and Degree.',
+      'No active backlogs at the time of joining.',
+      'Competency in coding assessment (Advanced Quantitative Aptitude & Coding Section).'
+    ],
+    perks: ['Health Insurance for Family', 'Higher Education Sponsorship', 'Global Travel Opportunities'],
+    postedDate: 'Just now',
+    featured: true,
+    isUrgent: true,
+    applyUrl: 'https://www.tcs.com/careers/india/entry-level'
+  },
+  {
+    id: 'in-job-3',
+    title: 'Software Development Engineer I (FinTech / Backend)',
+    company: 'PhonePe',
+    companyColor: 'from-purple-600 to-indigo-700',
+    category: 'software-eng',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'hybrid',
+    location: 'Bengaluru / Pune, India',
+    salary: '₹18.0 - ₹24.0 LPA (Includes ESOPs & Joining Bonus)',
+    stipendRaw: 1800000,
+    skills: ['Java', 'Spring Boot', 'Kafka', 'MySQL', 'Redis', 'Docker'],
+    batchEligibility: '2024 & 2025 Batch Graduates',
+    description: 'Power India’s largest UPI payments network handling billions of monthly transactions. Build zero-downtime distributed systems, fraud prevention pipelines, and instant payment settlement ledgers.',
+    responsibilities: [
+      'Architect resilient backend microservices processing 10,000+ payment requests/second.',
+      'Write event-driven asynchronous processing queues using Apache Kafka and Redis.',
+      'Profile database queries to guarantee sub-50ms API response latency.'
+    ],
+    qualifications: [
+      'Bachelor’s or Master’s in Computer Science or related discipline.',
+      'Strong programming proficiency in Core Java, Multi-threading, and Collections.',
+      'Thorough knowledge of database indexing, caching strategies, and REST API design.'
+    ],
+    perks: ['Generous ESOP grants', 'Free gourmet breakfast & lunch', 'Gym & Wellness Allowance'],
+    postedDate: '1 day ago',
+    featured: true,
+    isUrgent: false,
+    applyUrl: 'https://www.phonepe.com/careers/'
+  },
+  {
+    id: 'in-job-4',
+    title: 'Specialist Programmer (SP) / DSE Off-Campus',
+    company: 'Infosys',
+    companyColor: 'from-blue-600 to-sky-600',
+    category: 'software-eng',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'hybrid',
+    location: 'Bengaluru, Pune, Hyderabad, Mysore, Chandigarh',
+    salary: '₹6.5 - ₹9.5 LPA',
+    stipendRaw: 650000,
+    skills: ['Java', 'Python', 'Algorithms', 'Data Structures', 'SQL', 'Git'],
+    batchEligibility: '2024, 2025 & 2026 Batches (InfyTQ / HackWithInfy Track)',
+    description: 'Specialist Programmer is Infosys’ flagship entry-level role for competitive coders. You will be assigned to digital innovation labs, generative AI engineering, and next-gen architecture teams.',
+    responsibilities: [
+      'Solve complex algorithmic problems and build enterprise cloud solutions.',
+      'Participate in rapid hackathons and prototype AI-assisted client solutions.',
+      'Complete industry-recognized certifications sponsored by Infosys Wingspan.'
+    ],
+    qualifications: [
+      'Passionate competitive programmer (HackWithInfy finalist or equivalent).',
+      'Hands-on expertise in dynamic programming, graphs, trees, and system design basics.',
+      'Strong analytical reasoning.'
+    ],
+    perks: ['Mysore World-Class Training Campus', 'Wingspan Certification Bonuses', 'Relocation Allowance'],
+    postedDate: '2 days ago',
+    featured: false,
+    isUrgent: false,
+    applyUrl: 'https://www.infosys.com/careers/graduates.html'
+  },
+  {
+    id: 'in-job-5',
+    title: 'Data Analyst & BI Intern',
+    company: 'Flipkart',
+    companyColor: 'from-blue-500 to-yellow-500',
+    category: 'ai-data',
+    country: 'India',
+    experienceLevel: 'internship',
+    workMode: 'hybrid',
+    location: 'Bengaluru, Karnataka, India',
+    salary: '₹50,000 / month',
+    stipendRaw: 50000,
+    skills: ['SQL', 'Python', 'Power BI', 'Excel', 'Pandas', 'Statistics'],
+    batchEligibility: 'B.Tech, B.Sc, BCA, MCA, or MBA (Tech) Students',
+    description: 'Work alongside Flipkart’s Supply Chain & Marketplace analytics teams. Unpack customer buying trends, Big Billion Days logistics models, and product catalog performance metrics.',
+    responsibilities: [
+      'Write optimized SQL queries across terabyte-scale clickstream tables.',
+      'Build automated live tracking dashboards in Power BI and Google Data Studio.',
+      'Conduct cohort analyses and statistical hypothesis tests for sales campaigns.'
+    ],
+    qualifications: [
+      'Strong command over SQL (joins, window functions, aggregations).',
+      'Proficiency in Python (Pandas/NumPy) for data cleaning and manipulation.',
+      'Ability to translate complex business metrics into intuitive visual reports.'
+    ],
+    perks: ['Employee discounts on Flipkart & Myntra', 'Campus shuttle buses', 'Pre-Placement Interview (PPI)'],
+    postedDate: '3 days ago',
+    featured: true,
+    isUrgent: false,
+    applyUrl: 'https://www.flipkartcareers.com/'
+  },
+  {
+    id: 'in-job-6',
+    title: 'Graduate Cloud & DevOps Trainee',
+    company: 'Jio Platforms',
+    companyColor: 'from-blue-600 to-red-600',
+    category: 'devops-cloud',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'onsite',
+    location: 'Navi Mumbai (RCP) / Bengaluru, India',
+    salary: '₹5.5 - ₹7.5 LPA',
+    stipendRaw: 550000,
+    skills: ['Linux', 'Docker', 'Kubernetes', 'Python', 'Networking', 'Git'],
+    batchEligibility: '2024 & 2025 B.Tech / B.E (CS/IT/ECE)',
+    description: 'Be part of India’s digital telecom revolution powering 450M+ subscribers. Assist in deploying scalable 5G network core microservices, Kubernetes clusters, and AI edge compute nodes.',
+    responsibilities: [
+      'Configure Linux servers, manage virtual machines, and monitor container health.',
+      'Assist in building CI/CD deployment pipelines using Jenkins and GitLab.',
+      'Monitor distributed system telemetry using Prometheus and Grafana.'
+    ],
+    qualifications: [
+      'B.Tech/B.E. in Computer Science, Information Technology, or Electronics.',
+      'Strong command of Linux bash command line and TCP/IP networking.',
+      'Familiarity with containerization concepts (Docker) and Git.'
+    ],
+    perks: ['Free Jio Fiber & Unlimited 5G services', 'On-campus sports complex', 'Subsidized dining'],
+    postedDate: 'Just now',
+    featured: false,
+    isUrgent: true,
+    applyUrl: 'https://careers.jio.com/'
+  },
+  {
+    id: 'in-job-7',
+    title: 'Associate Cybersecurity Analyst (SOC)',
+    company: 'Cisco India',
+    companyColor: 'from-cyan-600 to-blue-700',
+    category: 'cybersecurity',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'hybrid',
+    location: 'Bengaluru, Karnataka, India',
+    salary: '₹12.0 - ₹16.0 LPA',
+    stipendRaw: 1200000,
+    skills: ['Networking', 'Wireshark', 'Python', 'Linux', 'SIEM', 'Firewalls'],
+    batchEligibility: '2024 & 2025 Batches (CS/IT/Cybersecurity)',
+    description: 'Join Cisco Customer Experience (CX) Security Centers defending Fortune 500 corporate perimeters against malicious intrusions, phishing campaigns, and malware attacks.',
+    responsibilities: [
+      'Monitor real-time security alerts from Cisco SecureX, Splunk, and firewalls.',
+      'Triage potential security incidents and perform network packet packet inspections.',
+      'Write Python scripts to automate routine vulnerability remediation workflows.'
+    ],
+    qualifications: [
+      'Degree in Computer Science, Information Security, or Networking.',
+      'Strong grasp of CCNA-level routing/switching concepts and OSI Model.',
+      'Eagerness to pursue industry certifications (CCNA, CEH, Security+).'
+    ],
+    perks: ['Cisco Certification Sponsorships', 'Hybrid Work Flexibility', 'Wellness Days Off'],
+    postedDate: '4 days ago',
+    featured: false,
+    isUrgent: false,
+    applyUrl: 'https://www.cisco.com/c/en/us/about/careers/we-are-cisco/students-and-new-graduates.html'
+  },
+  {
+    id: 'in-job-8',
+    title: 'Frontend Engineer Trainee (React / Next.js)',
+    company: 'Razorpay',
+    companyColor: 'from-blue-600 to-indigo-700',
+    category: 'software-eng',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'hybrid',
+    location: 'Bengaluru, India',
+    salary: '₹14.0 - ₹18.0 LPA',
+    stipendRaw: 1400000,
+    skills: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Next.js', 'HTML/CSS'],
+    batchEligibility: '2024 & 2025 Freshers / Self-Taught Frontend Coders',
+    description: 'Craft world-class checkout experiences trusted by millions of merchants. Build slick, accessible, and fast UI widgets, merchant dashboards, and banking payment flows.',
+    responsibilities: [
+      'Build modular, reusable React UI components using Blade Design System.',
+      'Ensure 99.99% frontend crash-free sessions across legacy and modern mobile browsers.',
+      'Collaborate closely with product designers and backend engineers.'
+    ],
+    qualifications: [
+      'Strong hands-on mastery of JavaScript (closures, promises, event loop) and React.',
+      'A portfolio or GitHub showing polished, responsive personal web projects.',
+      'Obsession with clean UI, micro-animations, and fast page loads.'
+    ],
+    perks: ['Comprehensive OPD Insurance', 'Annual Learning Grant', 'Flexible Leave Policy'],
+    postedDate: '1 day ago',
+    featured: true,
+    isUrgent: false,
+    applyUrl: 'https://razorpay.com/jobs/'
+  },
+  {
+    id: 'in-job-9',
+    title: 'Graduate Quality Assurance Engineer (Manual & Automated)',
+    company: 'Zoho Corporation',
+    companyColor: 'from-blue-500 to-amber-500',
+    category: 'qa-testing',
+    country: 'India',
+    experienceLevel: 'fresher',
+    workMode: 'onsite',
+    location: 'Chennai / Tenkasi / Salem, Tamil Nadu, India',
+    salary: '₹6.5 - ₹9.5 LPA',
+    stipendRaw: 650000,
+    skills: ['Java', 'Selenium', 'Postman', 'SQL', 'Jira', 'Git'],
+    batchEligibility: '2024 & 2025 Batch (All Engineering Branches Welcome)',
+    description: 'Ensure the highest degree of reliability across Zoho’s suite of 55+ enterprise cloud applications. Test intricate business workflows and automate regression test cycles.',
+    responsibilities: [
+      'Create comprehensive test cases and scenario matrices for newly released cloud applications.',
+      'Perform exploratory testing, cross-browser compatibility testing, and mobile testing.',
+      'Automate repetitive regression cycles using Java and Selenium WebDriver.'
+    ],
+    qualifications: [
+      'Keen eye for detail and logical analytical mindset.',
+      'Basic programming knowledge in Java, Python, or C++.',
+      'Understanding of software development life cycles (SDLC) and bug life cycles.'
+    ],
+    perks: ['Delicious campus cafeteria meals (Free)', 'Rural campus options with clean air', 'No service bond'],
+    postedDate: '1 day ago',
+    featured: false,
+    isUrgent: false,
+    applyUrl: 'https://www.zoho.com/careers/'
+  },
+  {
+    id: 'in-job-10',
+    title: 'Product Design & UI/UX Intern',
+    company: 'Swiggy',
+    companyColor: 'from-orange-500 to-amber-600',
+    category: 'ui-ux',
+    country: 'India',
+    experienceLevel: 'internship',
+    workMode: 'hybrid',
+    location: 'Bengaluru, Karnataka, India',
+    salary: '₹40,000 / month',
+    stipendRaw: 40000,
+    skills: ['Figma', 'Wireframing', 'User Research', 'Prototyping', 'Design Systems'],
+    batchEligibility: 'Pre-final and Final Year Students (Design, CS, IT)',
+    description: 'Help shape user interactions for Swiggy Food and Instamart quick commerce. Conduct usability interviews, create delight animations, and test checkout flows with real consumers.',
+    responsibilities: [
+      'Craft wireframes, interactive user flows, and high-fidelity mockups in Figma.',
+      'Partner with UX researchers to conduct usability interviews with delivery partners and customers.',
+      'Contribute components to the internal design system.'
+    ],
+    qualifications: [
+      'Figma mastery and a clean portfolio showcasing consumer mobile app design case studies.',
+      'Strong visual hierarchy, typography, and empathy for diverse Indian smartphone users.',
+      'Basic knowledge of frontend constraints.'
+    ],
+    perks: ['Swiggy One membership', 'Mentorship from Principal Designers', 'Pre-Placement Offer (PPO)'],
+    postedDate: '2 days ago',
+    featured: false,
+    isUrgent: false,
+    applyUrl: 'https://careers.swiggy.com/'
+  },
+
+  // --- GLOBAL & REMOTE ROLES (Open to Indian Applicants as well) ---
   {
     id: 'job-1',
     title: 'Software Engineering Intern (Summer / Fall)',
     company: 'Google',
     companyColor: 'from-blue-500 to-emerald-500',
     category: 'software-eng',
+    country: 'Global',
     experienceLevel: 'internship',
     workMode: 'hybrid',
-    location: 'Mountain View, CA / Remote Option',
-    salary: '$52 - $60 / hr',
-    stipendRaw: 9000,
+    location: 'Bengaluru, Hyderabad / Mountain View, CA',
+    salary: '$52 - $60 / hr or ₹1,00,000/mo',
+    stipendRaw: 90000,
     skills: ['Python', 'C++', 'Java', 'Data Structures', 'Algorithms', 'Git'],
     batchEligibility: '2025 & 2026 Graduates (B.Tech / BS / MS)',
     description: 'Join Google engineering teams to build products used by billions of people worldwide. Work alongside full-time mentors on scalable distributed systems, search algorithms, or mobile infrastructure.',
     responsibilities: [
       'Write clean, maintainable, and testable code in C++, Java, or Python.',
       'Collaborate with senior software engineers, product managers, and UX designers.',
-      'Participate in design reviews, sprint planning, and engineering demos.',
       'Ship code to production impacting millions of end users.'
     ],
     qualifications: [
-      'Currently enrolled in an Associate, Bachelor or Master degree in Computer Science or related STEM field.',
+      'Enrolled in Bachelor or Master degree in Computer Science or related STEM field.',
       'Strong foundational knowledge of Data Structures and Algorithms.',
       'Hands-on experience with at least one programming language (Python, C++, Java, or Go).'
     ],
-    perks: ['Mentorship Program', 'Housing Stipend ($9,000)', 'Free Meals & Transport', 'Full-time Conversion Opportunity'],
+    perks: ['Mentorship Program', 'Free Meals & Transport', 'Full-time Conversion Opportunity'],
     postedDate: 'Just now',
     featured: true,
     isUrgent: true,
@@ -36,9 +349,10 @@ export const CURATED_JOBS = [
     company: 'Vercel',
     companyColor: 'from-slate-900 to-slate-700',
     category: 'software-eng',
+    country: 'Global',
     experienceLevel: 'fresher',
     workMode: 'remote',
-    location: 'Remote (Worldwide)',
+    location: 'Remote (Worldwide - Including India)',
     salary: '$85,000 - $110,000 / yr',
     stipendRaw: 85000,
     skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Git', 'HTML/CSS'],
@@ -47,15 +361,14 @@ export const CURATED_JOBS = [
     responsibilities: [
       'Build responsive, accessible, and high-performance UI components in React and Next.js.',
       'Write end-to-end and unit tests using Vitest and Playwright.',
-      'Optimize web vitals (LCP, FID, CLS) for client-facing dashboards.',
-      'Contribute to open-source UI libraries and component documentation.'
+      'Optimize web vitals (LCP, FID, CLS) for client-facing dashboards.'
     ],
     qualifications: [
       'Strong portfolio demonstrating modern React applications and clean CSS.',
       'Proficiency in TypeScript and modern JavaScript (ES6+).',
       'Understanding of component lifecycle, state management, and REST APIs.'
     ],
-    perks: ['100% Remote', '$2,000 Home Office Stipend', 'Health Insurance', 'Learning & Conference Budget'],
+    perks: ['100% Remote', '$2,000 Home Office Stipend', 'Health Insurance', 'Learning Budget'],
     postedDate: '1 day ago',
     featured: true,
     isUrgent: false,
@@ -67,9 +380,10 @@ export const CURATED_JOBS = [
     company: 'Anthropic',
     companyColor: 'from-amber-600 to-orange-500',
     category: 'ai-data',
+    country: 'Global',
     experienceLevel: 'internship',
     workMode: 'hybrid',
-    location: 'San Francisco, CA',
+    location: 'San Francisco, CA / Remote',
     salary: '$55 - $70 / hr',
     stipendRaw: 10500,
     skills: ['Python', 'PyTorch', 'Linear Algebra', 'NumPy', 'Git', 'Linux'],
@@ -77,170 +391,17 @@ export const CURATED_JOBS = [
     description: 'Conduct foundational AI safety and capability research on large multimodal neural networks. Collaborate with researchers to evaluate model reasoning, alignment, and interpretability.',
     responsibilities: [
       'Implement and run distributed training experiments in PyTorch.',
-      'Analyze safety metrics and evaluation benchmarks across multi-turn dialog datasets.',
-      'Collaborate on writing research findings and internal technical documentation.'
+      'Analyze safety metrics and evaluation benchmarks across multi-turn dialog datasets.'
     ],
     qualifications: [
       'Proficient in Python and deep learning frameworks (PyTorch preferred).',
-      'Solid grasp of probability, linear algebra, and gradient-based optimization.',
-      'Previous project or coursework in Machine Learning or NLP.'
+      'Solid grasp of probability, linear algebra, and gradient-based optimization.'
     ],
-    perks: ['Compute Cluster Access (H100s)', 'Research Publication Mentorship', 'Relocation Assistance'],
+    perks: ['Compute Cluster Access (H100s)', 'Research Publication Mentorship'],
     postedDate: '2 days ago',
     featured: true,
     isUrgent: true,
     applyUrl: 'https://anthropic.com/careers'
-  },
-  {
-    id: 'job-4',
-    title: 'Graduate Data Analyst (0 - 1 Yrs)',
-    company: 'Spotify',
-    companyColor: 'from-emerald-500 to-green-600',
-    category: 'ai-data',
-    experienceLevel: 'fresher',
-    workMode: 'remote',
-    location: 'New York, NY / Remote',
-    salary: '$75,000 - $95,000 / yr',
-    stipendRaw: 75000,
-    skills: ['SQL', 'Python', 'Tableau', 'Pandas', 'Data Visualization', 'Statistics'],
-    batchEligibility: '2024 & 2025 Graduates',
-    description: 'Help decode user engagement patterns across millions of daily music and podcast listeners. You will craft dashboards and derive actionable insights that shape our recommendation algorithms.',
-    responsibilities: [
-      'Write complex SQL queries to extract, transform, and aggregate behavioral datasets.',
-      'Build automated executive dashboards in Tableau and Looker.',
-      'Partner with product managers to design A/B test experiments and measure feature adoption.'
-    ],
-    qualifications: [
-      'Degree in Computer Science, Data Science, Statistics, Mathematics or related domain.',
-      'Fluency in SQL and Python (Pandas/Matplotlib) for exploratory data analysis.',
-      'Curiosity for user metrics and data storytelling.'
-    ],
-    perks: ['Spotify Premium for life', 'Flexible Work Policy', 'Wellness Reimbursement', 'Global Mobility Program'],
-    postedDate: '3 days ago',
-    featured: false,
-    isUrgent: false,
-    applyUrl: 'https://www.lifeatspotify.com/jobs'
-  },
-  {
-    id: 'job-5',
-    title: 'Cloud Infrastructure & DevOps Intern',
-    company: 'Amazon Web Services (AWS)',
-    companyColor: 'from-amber-500 to-yellow-600',
-    category: 'devops-cloud',
-    experienceLevel: 'internship',
-    workMode: 'hybrid',
-    location: 'Seattle, WA / Austin, TX',
-    salary: '$48 - $56 / hr',
-    stipendRaw: 8500,
-    skills: ['AWS', 'Linux', 'Docker', 'Python', 'Git', 'Bash', 'Networking'],
-    batchEligibility: '2025, 2026, 2027 Engineering Students',
-    description: 'Work directly on the cloud backbone that powers the global internet. You will learn to automate containerized deployments, manage serverless fleets, and build resilience monitoring systems.',
-    responsibilities: [
-      'Automate cloud infrastructure deployments using AWS CDK and Terraform.',
-      'Package microservices into Docker containers and configure CI/CD pipelines.',
-      'Monitor distributed system alarms and diagnose latency bottlenecks in real time.'
-    ],
-    qualifications: [
-      'Enrolled in Computer Science, Information Technology, or Software Engineering degree.',
-      'Solid understanding of Linux operating system concepts and TCP/IP networking.',
-      'Familiarity with container concepts (Docker) and scripting (Bash or Python).'
-    ],
-    perks: ['AWS Certification Vouchers ($1,500 value)', 'Executive Mentorship', 'Competitive Housing Grant'],
-    postedDate: '1 day ago',
-    featured: true,
-    isUrgent: false,
-    applyUrl: 'https://amazon.jobs/en/business_categories/student-programs'
-  },
-  {
-    id: 'job-6',
-    title: 'Associate Cybersecurity Analyst (SOC Tier 1)',
-    company: 'CrowdStrike',
-    companyColor: 'from-red-600 to-rose-700',
-    category: 'cybersecurity',
-    experienceLevel: 'fresher',
-    workMode: 'remote',
-    location: 'Remote (US & Canada)',
-    salary: '$70,000 - $88,000 / yr',
-    stipendRaw: 70000,
-    skills: ['Linux', 'Networking', 'Wireshark', 'Python', 'OWASP', 'SIEM'],
-    batchEligibility: 'Freshers / Recent Bootcamp & College Grads',
-    description: 'Defend enterprise infrastructure against advanced persistent threats (APTs). You will monitor security event consoles, triage suspicious alerts, and conduct initial malware analysis.',
-    responsibilities: [
-      'Investigate alerts generated by endpoint telemetry and SIEM platforms.',
-      'Perform network packet analysis using Wireshark and tcpdump.',
-      'Draft incident reports detailing threat vectors and containment actions.',
-      'Script automated detection rules using Python and YARA.'
-    ],
-    qualifications: [
-      'Bachelor’s degree in Cybersecurity, Information Security, or Computer Science.',
-      'Hands-on experience with network protocols, firewalls, and Linux shell.',
-      'Security+ or CySA+ certification is an advantage, but personal home lab experience is highly valued.'
-    ],
-    perks: ['Comprehensive Training Program', 'Certification Sponsorships', 'Home Office Gear Allowance'],
-    postedDate: '4 days ago',
-    featured: false,
-    isUrgent: true,
-    applyUrl: 'https://crowdstrike.com/careers'
-  },
-  {
-    id: 'job-7',
-    title: 'Software Development Engineer in Test (SDET Intern)',
-    company: 'Microsoft',
-    companyColor: 'from-blue-600 to-indigo-600',
-    category: 'qa-testing',
-    experienceLevel: 'internship',
-    workMode: 'hybrid',
-    location: 'Redmond, WA',
-    salary: '$46 - $54 / hr',
-    stipendRaw: 8000,
-    skills: ['Java', 'Selenium', 'Python', 'Postman', 'Git', 'SQL', 'Automation'],
-    batchEligibility: '2025 & 2026 Batch Graduates',
-    description: 'Bridge the gap between development and reliability. You will write automated end-to-end test suites, stress-test high throughput microservices, and build continuous integration quality gates.',
-    responsibilities: [
-      'Design test automation frameworks using Selenium, Playwright, or Cypress.',
-      'Write automated API regression suites in Postman and RestAssured.',
-      'Collaborate with developers to debug intermittent failures in CI/CD pipelines.'
-    ],
-    qualifications: [
-      'Current student pursuing Computer Science, Computer Engineering, or related degree.',
-      'Knowledge of object-oriented programming (Java or C#) and scripting (Python).',
-      'Passion for software quality and building robust testable code.'
-    ],
-    perks: ['Microsoft Surface Laptop provided', 'Housing Allowance', 'Full-time Return Offer Pathway'],
-    postedDate: '3 days ago',
-    featured: false,
-    isUrgent: false,
-    applyUrl: 'https://careers.microsoft.com/students/us/en'
-  },
-  {
-    id: 'job-8',
-    title: 'Junior UI/UX & Product Design Trainee',
-    company: 'Figma',
-    companyColor: 'from-violet-500 to-pink-500',
-    category: 'ui-ux',
-    experienceLevel: 'fresher',
-    workMode: 'hybrid',
-    location: 'San Francisco, CA / New York, NY',
-    salary: '$80,000 - $96,000 / yr',
-    stipendRaw: 80000,
-    skills: ['Figma', 'Wireframing', 'User Research', 'Prototyping', 'Design Systems', 'HTML/CSS'],
-    batchEligibility: 'Design, HCI & CS 2024-2025 Graduates',
-    description: 'Design the next generation of creative and collaboration tools. You will conduct user research, craft wireframes, design atomic design system components, and test interactive prototypes with real community members.',
-    responsibilities: [
-      'Create high-fidelity UI mockups and interactive design prototypes in Figma.',
-      'Participate in user feedback sessions and translate qualitative observations into wireframes.',
-      'Partner closely with frontend engineers to ensure pixel-perfect CSS implementation.'
-    ],
-    qualifications: [
-      'Portfolio showcasing 2-3 detailed case studies (web or mobile apps).',
-      'Deep fluency with Figma features (Auto-layout, Components, Variants, Variables).',
-      'Basic understanding of web technologies (HTML, CSS, flexbox) is a huge plus.'
-    ],
-    perks: ['Latest MacBook Pro + Pro Displays', 'Annual Education Budget', 'Wellness Benefits'],
-    postedDate: 'Just now',
-    featured: true,
-    isUrgent: false,
-    applyUrl: 'https://www.figma.com/careers'
   },
   {
     id: 'job-9',
@@ -248,238 +409,56 @@ export const CURATED_JOBS = [
     company: 'Stripe',
     companyColor: 'from-indigo-600 to-violet-700',
     category: 'software-eng',
+    country: 'Global',
     experienceLevel: 'junior',
     workMode: 'remote',
-    location: 'Remote (US, Canada, Europe)',
-    salary: '$110,000 - $135,000 / yr',
-    stipendRaw: 110000,
+    location: 'Remote (Global - Including India)',
+    salary: '$90,000 - $125,000 / yr',
+    stipendRaw: 90000,
     skills: ['Go', 'Node.js', 'PostgreSQL', 'Docker', 'REST APIs', 'Git'],
     batchEligibility: '1-2 Years Experience or Exceptional Open Source Contributor',
-    description: 'Build mission-critical financial infrastructure powering global commerce. You will develop low-latency payment processing APIs, design resilient database schemas, and ensure 99.999% uptime.',
+    description: 'Build mission-critical financial infrastructure powering global commerce. You will develop low-latency payment processing APIs and design resilient database schemas.',
     responsibilities: [
       'Architect and ship idempotent backend endpoints handling millions of transactions.',
-      'Optimize relational database queries in PostgreSQL.',
-      'Contribute to internal developer tooling and observability instrumentation.'
+      'Optimize relational database queries in PostgreSQL.'
     ],
     qualifications: [
       'Experience building backend services in Go, Node.js, Python, or Ruby.',
-      'Understanding of ACID transactions, relational database indexes, and concurrency.',
-      'High attention to detail when writing tests and handling edge cases.'
+      'Understanding of ACID transactions, relational database indexes, and concurrency.'
     ],
-    perks: ['Equity Package', 'Unlimited PTO', 'Home Office Stipend ($1,500)', 'Parental Leave'],
+    perks: ['Equity Package', 'Home Office Stipend ($1,500)', 'Unlimited PTO'],
     postedDate: '5 days ago',
     featured: true,
     isUrgent: false,
     applyUrl: 'https://stripe.com/jobs'
   },
   {
-    id: 'job-10',
-    title: 'IT Helpdesk & System Support Specialist',
-    company: 'Dell Technologies',
-    companyColor: 'from-blue-600 to-sky-500',
-    category: 'it-support',
-    experienceLevel: 'fresher',
-    workMode: 'onsite',
-    location: 'Round Rock, TX / Austin, TX',
-    salary: '$50,000 - $65,000 / yr',
-    stipendRaw: 50000,
-    skills: ['Windows Server', 'Active Directory', 'Hardware Troubleshooting', 'Networking', 'Linux'],
-    batchEligibility: 'Open to All IT / CS / Electronics Graduates',
-    description: 'Be the frontline hero supporting enterprise IT operations. You will provision employee workstations, manage Active Directory accounts, resolve hardware/software incidents, and maintain office network infrastructure.',
-    responsibilities: [
-      'Troubleshoot Windows, macOS, and Linux workstation hardware and OS issues.',
-      'Manage user permissions, password resets, and groups in Microsoft Entra / Active Directory.',
-      'Configure VPNs, local area networks (LAN), and enterprise wireless access points.'
-    ],
-    qualifications: [
-      'Degree or diploma in Information Technology, Computer Science, or CompTIA A+ certification.',
-      'Friendly communication skills and patience when assisting non-technical users.',
-      'Working knowledge of DHCP, DNS, IP addressing, and operating system recovery.'
-    ],
-    perks: ['Hardware discounts on Dell gear', 'Clear path to SysAdmin/DevOps role', 'Health benefits'],
-    postedDate: '2 days ago',
-    featured: false,
-    isUrgent: false,
-    applyUrl: 'https://jobs.dell.com/'
-  },
-  {
-    id: 'job-11',
-    title: 'Full Stack Web Developer Intern (Summer 2025/2026)',
-    company: 'Shopify',
-    companyColor: 'from-emerald-600 to-teal-700',
-    category: 'software-eng',
-    experienceLevel: 'internship',
-    workMode: 'remote',
-    location: 'Remote (North America & UK)',
-    salary: '$44 - $52 / hr',
-    stipendRaw: 7500,
-    skills: ['React', 'Ruby on Rails', 'TypeScript', 'GraphQL', 'Git', 'SQL'],
-    batchEligibility: 'Current Undergrad & Masters Students',
-    description: 'Ship merchant-facing features directly into Shopify Admin. You will work across the full stack—from intuitive frontend React components to performant backend GraphQL APIs.',
-    responsibilities: [
-      'Build merchant tools using React, TypeScript, and Polaris design system.',
-      'Develop robust GraphQL APIs and write backend business logic.',
-      'Participate in code reviews and pair programming sessions with staff engineers.'
-    ],
-    qualifications: [
-      'Demonstrated enthusiasm for web development through personal projects or hackathons.',
-      'Proficiency in JavaScript or TypeScript; curiosity to learn Ruby.',
-      'Enrolled in an accredited degree program.'
-    ],
-    perks: ['Remote-first culture', 'Ergonomic workspace stipend', 'Mentorship and speaker series'],
-    postedDate: 'Just now',
-    featured: false,
-    isUrgent: true,
-    applyUrl: 'https://www.shopify.com/careers/interns'
-  },
-  {
-    id: 'job-12',
-    title: 'Junior Machine Learning Engineer',
-    company: 'Databricks',
-    companyColor: 'from-red-500 to-amber-600',
-    category: 'ai-data',
-    experienceLevel: 'fresher',
-    workMode: 'hybrid',
-    location: 'San Francisco, CA / Seattle, WA',
-    salary: '$115,000 - $140,000 / yr',
-    stipendRaw: 115000,
-    skills: ['Python', 'SQL', 'PyTorch', 'Docker', 'Git', 'Linux', 'Pandas'],
-    batchEligibility: '2024-2025 B.S. / M.S. Graduates in CS or Data Science',
-    description: 'Work on cutting-edge Lakehouse platforms and MLflow tooling. You will help build reproducible machine learning pipelines, optimize inference serving engines, and support enterprise LLM deployments.',
-    responsibilities: [
-      'Build end-to-end ML training pipelines with automated validation steps.',
-      'Package machine learning models into Docker containers for fast microservice inference.',
-      'Benchmark latency and resource utilization across GPU and CPU hardware.'
-    ],
-    qualifications: [
-      'Strong coding skills in Python and familiarity with standard ML libraries (Scikit-Learn, PyTorch).',
-      'Knowledge of data structures, algorithms, and distributed computing basics.',
-      'Experience with SQL queries and relational databases.'
-    ],
-    perks: ['Generous Equity / RSU grant', '401(k) Match', 'Comprehensive Health Care'],
-    postedDate: '3 days ago',
-    featured: true,
-    isUrgent: false,
-    applyUrl: 'https://databricks.com/company/careers'
-  },
-  {
-    id: 'job-13',
-    title: 'Site Reliability Engineering (SRE) Intern',
-    company: 'Cloudflare',
-    companyColor: 'from-orange-500 to-amber-500',
-    category: 'devops-cloud',
-    experienceLevel: 'internship',
-    workMode: 'remote',
-    location: 'Remote (US, EMEA)',
-    salary: '$45 - $55 / hr',
-    stipendRaw: 8000,
-    skills: ['Linux', 'Go', 'Python', 'Networking', 'Docker', 'Git'],
-    batchEligibility: 'Students graduating in 2025, 2026, or 2027',
-    description: 'Help protect and accelerate millions of websites across Cloudflare’s global edge network. You will write automation code to detect anomalies, mitigate DDoS traffic, and maintain planetary-scale DNS infrastructure.',
-    responsibilities: [
-      'Write tooling in Go or Python to automate server health verification and traffic failover.',
-      'Investigate edge performance metrics and diagnose BGP routing and TCP packet loss.',
-      'Improve incident alerting thresholds to reduce alert fatigue for on-call engineers.'
-    ],
-    qualifications: [
-      'Strong grasp of Linux fundamentals and command-line utilities.',
-      'Understanding of networking principles (DNS, HTTP/HTTPS, BGP, TCP/UDP).',
-      'Enthusiasm for debugging complex distributed systems.'
-    ],
-    perks: ['Full remote flexibility', 'Conference sponsorship', 'Intern team hackathons'],
-    postedDate: '5 days ago',
-    featured: false,
-    isUrgent: false,
-    applyUrl: 'https://www.cloudflare.com/careers/departments/university/'
-  },
-  {
-    id: 'job-14',
-    title: 'Junior Penetration Tester / Ethical Hacker',
-    company: 'Mandiant (Google Cloud)',
-    companyColor: 'from-red-600 to-indigo-600',
+    id: 'job-6',
+    title: 'Associate Cybersecurity Analyst (SOC Tier 1)',
+    company: 'CrowdStrike',
+    companyColor: 'from-red-600 to-rose-700',
     category: 'cybersecurity',
+    country: 'Global',
     experienceLevel: 'fresher',
     workMode: 'remote',
     location: 'Remote (Global)',
-    salary: '$75,000 - $92,000 / yr',
-    stipendRaw: 75000,
-    skills: ['Python', 'Linux', 'OWASP', 'Wireshark', 'Burp Suite', 'Networking'],
-    batchEligibility: '2024 & 2025 Graduates / CTF Enthusiasts',
-    description: 'Join elite red team practitioners simulating real-world cyber adversaries. You will perform vulnerability assessments against web applications, cloud configurations, and network perimeters.',
+    salary: '$70,000 - $88,000 / yr',
+    stipendRaw: 70000,
+    skills: ['Linux', 'Networking', 'Wireshark', 'Python', 'OWASP', 'SIEM'],
+    batchEligibility: 'Freshers / Recent Bootcamp & College Grads',
+    description: 'Defend enterprise infrastructure against advanced persistent threats. You will monitor security consoles and triage suspicious alerts.',
     responsibilities: [
-      'Conduct manual and automated vulnerability assessments on web applications and APIs.',
-      'Document findings, proof-of-concept exploits, and remediation strategies for clients.',
-      'Develop custom security assessment scripts and exploitation payloads in Python.'
+      'Investigate alerts generated by endpoint telemetry and SIEM platforms.',
+      'Perform network packet analysis using Wireshark and tcpdump.'
     ],
     qualifications: [
-      'Demonstrated participation in Capture The Flag (CTF) competitions or TryHackMe / HackTheBox.',
-      'Familiarity with the OWASP Top 10 vulnerabilities (SQLi, XSS, CSRF, IDOR).',
-      'Solid command line competency in Kali Linux and bash scripting.'
+      'Bachelor’s degree in Cybersecurity, Information Security, or Computer Science.',
+      'Hands-on experience with network protocols and Linux shell.'
     ],
-    perks: ['OSCP / CEH Certification Funding', 'Dedicated Research Time', 'Generous PTO'],
-    postedDate: '2 days ago',
-    featured: false,
-    isUrgent: true,
-    applyUrl: 'https://www.mandiant.com/careers'
-  },
-  {
-    id: 'job-15',
-    title: 'Graduate Quality Assurance Engineer (Manual & Automated)',
-    company: 'Zoho Corporation',
-    companyColor: 'from-blue-500 to-amber-500',
-    category: 'qa-testing',
-    experienceLevel: 'fresher',
-    workMode: 'onsite',
-    location: 'Chennai / Austin, TX / Remote Option',
-    salary: '₹6.5 - ₹9.5 LPA / $55,000 / yr',
-    stipendRaw: 55000,
-    skills: ['Java', 'Selenium', 'Postman', 'SQL', 'Jira', 'Git'],
-    batchEligibility: '2024 & 2025 Batch (All Engineering Branches Welcome)',
-    description: 'Ensure the highest degree of reliability across Zoho’s suite of 50+ enterprise SaaS products. You will write test strategies, uncover tricky edge-case bugs, and write automated test scripts.',
-    responsibilities: [
-      'Create comprehensive test cases and scenario matrices for newly released cloud applications.',
-      'Perform exploratory testing, cross-browser compatibility testing, and mobile testing.',
-      'Automate repetitive regression cycles using Java and Selenium WebDriver.'
-    ],
-    qualifications: [
-      'Keen eye for detail and logical analytical mindset.',
-      'Basic programming knowledge in Java, Python, or C++.',
-      'Understanding of software development life cycles (SDLC) and bug life cycles.'
-    ],
-    perks: ['Delicious campus cafeteria meals', 'Supportive learning culture', 'No bond / flexible agreements'],
-    postedDate: '1 day ago',
-    featured: false,
-    isUrgent: false,
-    applyUrl: 'https://www.zoho.com/careers/'
-  },
-  {
-    id: 'job-16',
-    title: 'Mobile App Developer Intern (iOS / Android / Flutter)',
-    company: 'Uber',
-    companyColor: 'from-slate-900 to-slate-700',
-    category: 'software-eng',
-    experienceLevel: 'internship',
-    workMode: 'hybrid',
-    location: 'San Francisco, CA / Sunnyvale, CA',
-    salary: '$50 - $58 / hr',
-    stipendRaw: 8800,
-    skills: ['Swift', 'Kotlin', 'Flutter', 'Git', 'REST APIs', 'Java'],
-    batchEligibility: '2025 - 2027 Undergrad & Masters Students',
-    description: 'Build native mobile features for driver and rider applications operating at planetary scale. You will work on real-time GPS telemetry, payment flows, and silky smooth 60fps animations.',
-    responsibilities: [
-      'Develop feature prototypes in Swift (iOS) or Kotlin (Android).',
-      'Optimize memory usage, startup time, and network request queuing.',
-      'Write modular code covered by comprehensive unit tests.'
-    ],
-    qualifications: [
-      'Experience building at least one mobile application (iOS, Android, or Flutter) with code on GitHub.',
-      'Understanding of mobile UI components, asynchronous tasks, and state management.',
-      'Pursuing a degree in Computer Science, Software Engineering, or related technical discipline.'
-    ],
-    perks: ['Uber Ride credits ($300/mo)', 'Housing & travel assistance', 'Mentorship from Staff Engineers'],
+    perks: ['Comprehensive Training Program', 'Certification Sponsorships'],
     postedDate: '4 days ago',
     featured: false,
-    isUrgent: false,
-    applyUrl: 'https://www.uber.com/us/en/careers/'
+    isUrgent: true,
+    applyUrl: 'https://crowdstrike.com/careers'
   }
 ];

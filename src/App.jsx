@@ -32,6 +32,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [locationQuery, setLocationQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedRegion, setSelectedRegion] = useState('all');
   const [selectedLevel, setSelectedLevel] = useState('all');
   const [selectedWorkMode, setSelectedWorkMode] = useState('all');
   const [minMatchScore, setMinMatchScore] = useState(0);
@@ -120,6 +121,7 @@ export default function App() {
     setSearchQuery('');
     setLocationQuery('');
     setSelectedCategory('all');
+    setSelectedRegion('all');
     setSelectedLevel('all');
     setSelectedWorkMode('all');
     setMinMatchScore(0);
@@ -151,6 +153,28 @@ export default function App() {
         // Category
         if (selectedCategory !== 'all' && job.category !== selectedCategory) {
           return false;
+        }
+
+        // Region / Country (India vs Global)
+        if (selectedRegion !== 'all') {
+          const locLower = (job.location || '').toLowerCase();
+          const isIndia = job.country === 'India' || 
+            locLower.includes('india') || 
+            locLower.includes('bengaluru') || 
+            locLower.includes('bangalore') || 
+            locLower.includes('hyderabad') || 
+            locLower.includes('pune') || 
+            locLower.includes('chennai') || 
+            locLower.includes('mumbai') || 
+            locLower.includes('noida') || 
+            locLower.includes('delhi');
+
+          if (selectedRegion === 'India' && !isIndia) {
+            return false;
+          }
+          if (selectedRegion === 'Global' && isIndia && !locLower.includes('worldwide') && !locLower.includes('global')) {
+            return false;
+          }
         }
 
         // Level
@@ -213,6 +237,7 @@ export default function App() {
   }, [
     allJobs,
     selectedCategory,
+    selectedRegion,
     selectedLevel,
     selectedWorkMode,
     onlyBookmarked,
@@ -301,6 +326,8 @@ export default function App() {
             <JobFilters
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
+              selectedRegion={selectedRegion}
+              setSelectedRegion={setSelectedRegion}
               selectedLevel={selectedLevel}
               setSelectedLevel={setSelectedLevel}
               selectedWorkMode={selectedWorkMode}

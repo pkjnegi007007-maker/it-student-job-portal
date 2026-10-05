@@ -11,7 +11,7 @@ export default function SearchBar({
   totalResults,
   onQuickSkillFilter
 }) {
-  const quickTags = ['Python', 'React', 'Docker', 'SQL', 'Internship', 'Remote', 'Freshers'];
+  const quickTags = ['🇮🇳 India Roles', 'TCS / Infosys', 'Bengaluru', 'Python', 'React', 'Docker', 'Internship', 'Freshers'];
 
   return (
     <div className="w-full bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 p-4 transition-colors">

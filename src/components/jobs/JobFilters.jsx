@@ -11,7 +11,8 @@ import {
   SlidersHorizontal,
   Bookmark,
   TrendingUp,
-  Percent
+  Percent,
+  Globe2
 } from 'lucide-react';
 import { IT_CATEGORIES, EXPERIENCE_LEVELS, WORK_MODES } from '../../data/itCategories.js';
 
@@ -33,6 +34,8 @@ export default function JobFilters({
   setSelectedLevel,
   selectedWorkMode,
   setSelectedWorkMode,
+  selectedRegion,
+  setSelectedRegion,
   sortBy,
   setSortBy,
   onlyBookmarked,
@@ -41,8 +44,14 @@ export default function JobFilters({
   setMinMatchScore,
   categoryCounts = {}
 }) {
+  const REGIONS = [
+    { id: 'all', label: 'All Locations' },
+    { id: 'India', label: '🇮🇳 India Roles' },
+    { id: 'Global', label: '🌐 Global / Remote' }
+  ];
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Category Pills Slider / Grid */}
       <div className="overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
         <div className="flex gap-2 min-w-max">
@@ -82,8 +91,28 @@ export default function JobFilters({
 
       {/* Secondary Filter Controls Bar */}
       <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
-        {/* Experience Level & Work Mode Tabs */}
+        {/* Region, Experience Level & Work Mode Tabs */}
         <div className="flex flex-wrap items-center gap-3">
+          {/* Region / Country Selector */}
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs text-slate-400 font-medium">Region:</span>
+            <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+              {REGIONS.map((reg) => (
+                <button
+                  key={reg.id}
+                  onClick={() => setSelectedRegion(reg.id)}
+                  className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
+                    selectedRegion === reg.id
+                      ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  {reg.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Experience Level */}
           <div className="flex items-center gap-1.5">
             <span className="text-xs text-slate-400 font-medium">Level:</span>
@@ -98,7 +127,7 @@ export default function JobFilters({
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
-                  {lvl.id === 'all' ? 'All Levels' : lvl.id === 'internship' ? 'Internship' : lvl.id === 'fresher' ? 'Fresher (0 yr)' : 'Junior (1-2 yr)'}
+                  {lvl.id === 'all' ? 'All Levels' : lvl.id === 'internship' ? 'Internship' : lvl.id === 'fresher' ? 'Fresher (0 yr)' : 'Junior'}
                 </button>
               ))}
             </div>
