@@ -10,12 +10,14 @@ import {
   Award,
   ChevronRight,
   Copy,
-  Check
+  Check,
+  Laptop
 } from 'lucide-react';
 import { PREP_RESOURCES } from '../../data/prepResources.js';
+import CodingArena from './CodingArena.jsx';
 
 export default function PrepCorner() {
-  const [activeSubTab, setActiveSubTab] = useState('dsa');
+  const [activeSubTab, setActiveSubTab] = useState('practice');
   const [copiedIndex, setCopiedIndex] = useState(null);
 
   const handleCopyCode = (code, index) => {
@@ -33,15 +35,30 @@ export default function PrepCorner() {
           <span>Student Interview Accelerator</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-black mb-2">
-          Technical Interview & Career Preparation Corner
+          Technical Interview & Coding Preparation Corner
         </h2>
         <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-          Master the highest-frequency coding patterns, craft an ATS-friendly Google-standard tech resume, and ace technical rounds.
+          Master real technical interview questions with live in-browser testing, direct platform links (LeetCode & GFG), Google-standard resume formulas, and interview checklists.
         </p>
       </div>
 
       {/* Sub navigation tabs */}
       <div className="flex border-b border-slate-200 dark:border-slate-800 gap-2 overflow-x-auto pb-1 text-sm font-semibold">
+        <button
+          onClick={() => setActiveSubTab('practice')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl border-b-2 transition-all ${
+            activeSubTab === 'practice'
+              ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-900'
+              : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+          }`}
+        >
+          <Laptop className="w-4 h-4" />
+          <span>Live Coding Arena</span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-bold">
+            Interactive
+          </span>
+        </button>
+
         <button
           onClick={() => setActiveSubTab('dsa')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl border-b-2 transition-all ${
@@ -51,7 +68,7 @@ export default function PrepCorner() {
           }`}
         >
           <Code2 className="w-4 h-4" />
-          <span>DSA & Coding Patterns</span>
+          <span>Pattern Cheat Sheets</span>
         </button>
 
         <button
@@ -79,14 +96,19 @@ export default function PrepCorner() {
         </button>
       </div>
 
-      {/* Content for DSA Patterns */}
+      {/* SUB-VIEW 1: Interactive Coding Arena */}
+      {activeSubTab === 'practice' && (
+        <CodingArena />
+      )}
+
+      {/* SUB-VIEW 2: Content for DSA Patterns */}
       {activeSubTab === 'dsa' && (
         <div className="space-y-6">
           <div className="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/60 flex items-start gap-3">
             <Terminal className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
             <div className="text-xs text-indigo-950 dark:text-indigo-200">
-              <span className="font-bold">Workspace Connection: </span>
-              Your project workspace contains <code className="bg-white dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono font-semibold">array_solutions.py</code> with 24 optimal Python solutions covering foundational to hard array interview questions.
+              <span className="font-bold">Pattern Strategy: </span>
+              Top tech companies (Amazon, Google, Microsoft, TCS Digital) test patterns rather than memorized code. Study these patterns and apply them directly in the <button onClick={() => setActiveSubTab('practice')} className="underline font-bold text-indigo-700 dark:text-indigo-300">Live Coding Arena</button>.
             </div>
           </div>
 
@@ -136,7 +158,7 @@ export default function PrepCorner() {
         </div>
       )}
 
-      {/* Content for Resume Blueprint */}
+      {/* SUB-VIEW 3: Content for Resume Blueprint */}
       {activeSubTab === 'resume' && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -172,7 +194,7 @@ export default function PrepCorner() {
         </div>
       )}
 
-      {/* Content for Checklist */}
+      {/* SUB-VIEW 4: Content for Checklist */}
       {activeSubTab === 'checklist' && (
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

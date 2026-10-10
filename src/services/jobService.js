@@ -26,10 +26,14 @@ export const jobService = {
 
       // Transform Remotive format into standard ITCareerHub schema
       return data.jobs.map(item => {
-        // Extract plain text preview
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = item.description || '';
-        const plainText = tempDiv.textContent || tempDiv.innerText || '';
+        // Extract plain text preview safely
+        const plainText = (typeof document !== 'undefined')
+          ? (() => {
+              const tempDiv = document.createElement('div');
+              tempDiv.innerHTML = item.description || '';
+              return tempDiv.textContent || tempDiv.innerText || '';
+            })()
+          : (item.description || '').replace(/<[^>]*>?/gm, '');
 
         // Extract skills from tags or fallback
         const skills = (item.tags && item.tags.length > 0)

@@ -3,14 +3,38 @@ const STORAGE_KEYS = {
   TRACKER: 'itcareerhub_application_tracker',
   STUDENT_SKILLS: 'itcareerhub_student_skills',
   CUSTOM_JOBS: 'itcareerhub_custom_posted_jobs',
-  DARK_MODE: 'itcareerhub_dark_mode'
+  DARK_MODE: 'itcareerhub_dark_mode',
+  SOLVED_QUESTIONS: 'itcareerhub_solved_questions',
+  PRACTICE_DRAFTS: 'itcareerhub_practice_drafts'
+};
+
+const memoryStore = {};
+
+const getStorage = () => {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const testKey = '__test_storage__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    }
+  } catch {
+    // Fall back to memory store if localStorage is disabled or throws
+  }
+
+  return {
+    getItem: (key) => (Object.prototype.hasOwnProperty.call(memoryStore, key) ? memoryStore[key] : null),
+    setItem: (key, val) => { memoryStore[key] = String(val); },
+    removeItem: (key) => { delete memoryStore[key]; },
+    clear: () => { Object.keys(memoryStore).forEach(k => delete memoryStore[k]); }
+  };
 };
 
 export const storageService = {
   // Bookmarks
   getBookmarks: () => {
     try {
-      const data = localStorage.getItem(STORAGE_KEYS.BOOKMARKS);
+      const data = getStorage().getItem(STORAGE_KEYS.BOOKMARKS);
       return data ? JSON.parse(data) : [];
     } catch {
       return [];
@@ -23,7 +47,7 @@ export const storageService = {
       const updated = bookmarks.includes(jobId)
         ? bookmarks.filter(id => id !== jobId)
         : [...bookmarks, jobId];
-      localStorage.setItem(STORAGE_KEYS.BOOKMARKS, JSON.stringify(updated));
+      getStorage().setItem(STORAGE_KEYS.BOOKMARKS, JSON.stringify(updated));
       return updated;
     } catch {
       return [];
@@ -33,7 +57,7 @@ export const storageService = {
   // Student Skills Profile
   getStudentSkills: () => {
     try {
-      const data = localStorage.getItem(STORAGE_KEYS.STUDENT_SKILLS);
+      const data = getStorage().getItem(STORAGE_KEYS.STUDENT_SKILLS);
       return data ? JSON.parse(data) : ['Python', 'JavaScript', 'Git', 'React', 'SQL'];
     } catch {
       return ['Python', 'JavaScript', 'Git', 'React', 'SQL'];
@@ -42,7 +66,7 @@ export const storageService = {
 
   setStudentSkills: (skills) => {
     try {
-      localStorage.setItem(STORAGE_KEYS.STUDENT_SKILLS, JSON.stringify(skills));
+      getStorage().setItem(STORAGE_KEYS.STUDENT_SKILLS, JSON.stringify(skills));
     } catch (e) {
       console.error(e);
     }
@@ -51,7 +75,7 @@ export const storageService = {
   // Application Tracker
   getTracker: () => {
     try {
-      const data = localStorage.getItem(STORAGE_KEYS.TRACKER);
+      const data = getStorage().getItem(STORAGE_KEYS.TRACKER);
       return data ? JSON.parse(data) : {
         saved: [],
         applied: [],
@@ -72,7 +96,7 @@ export const storageService = {
 
   saveTracker: (trackerState) => {
     try {
-      localStorage.setItem(STORAGE_KEYS.TRACKER, JSON.stringify(trackerState));
+      getStorage().setItem(STORAGE_KEYS.TRACKER, JSON.stringify(trackerState));
     } catch (e) {
       console.error(e);
     }
@@ -81,7 +105,7 @@ export const storageService = {
   // Custom User-Posted Jobs
   getCustomJobs: () => {
     try {
-      const data = localStorage.getItem(STORAGE_KEYS.CUSTOM_JOBS);
+      const data = getStorage().getItem(STORAGE_KEYS.CUSTOM_JOBS);
       return data ? JSON.parse(data) : [];
     } catch {
       return [];
@@ -92,7 +116,7 @@ export const storageService = {
     try {
       const jobs = storageService.getCustomJobs();
       const updated = [newJob, ...jobs];
-      localStorage.setItem(STORAGE_KEYS.CUSTOM_JOBS, JSON.stringify(updated));
+      getStorage().setItem(STORAGE_KEYS.CUSTOM_JOBS, JSON.stringify(updated));
       return updated;
     } catch {
       return [];
@@ -102,9 +126,12 @@ export const storageService = {
   // Theme
   getDarkMode: () => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEYS.DARK_MODE);
+      const saved = getStorage().getItem(STORAGE_KEYS.DARK_MODE);
       if (saved !== null) return JSON.parse(saved);
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (typeof window !== 'undefined' && window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+      return false;
     } catch {
       return false;
     }
@@ -112,9 +139,80 @@ export const storageService = {
 
   setDarkMode: (val) => {
     try {
-      localStorage.setItem(STORAGE_KEYS.DARK_MODE, JSON.stringify(val));
+      getStorage().setItem(STORAGE_KEYS.DARK_MODE, JSON.stringify(val));
     } catch (e) {
       console.error(e);
+    }
+  },
+
+  // Practice Coding Arena
+  getSolvedQuestions: () => {
+    try {
+      const data = getStorage().getItem(STORAGE_KEYS.SOLVED_QUESTIONS);
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  toggleQuestionSolved: (questionId) => {
+    try {
+      const solved = storageService.getSolvedQuestions();
+      const updated = solved.includes(questionId)
+        ? solved.filter(id => id !== questionId)
+        : [...solved, questionId];
+      getStorage().setItem(STORAGE_KEYS.SOLVED_QUESTIONS, JSON.stringify(updated));
+      return updated;
+    } catch {
+      return [];
+    }
+  },
+
+  markQuestionSolved: (questionId, isSolved = true) => {
+    try {
+      const solved = storageService.getSolvedQuestions();
+      let updated;
+      if (isSolved && !solved.includes(questionId)) {
+        updated = [...solved, questionId];
+      } else if (!isSolved && solved.includes(questionId)) {
+        updated = solved.filter(id => id !== questionId);
+      } else {
+        return solved;
+      }
+      getStorage().setItem(STORAGE_KEYS.SOLVED_QUESTIONS, JSON.stringify(updated));
+      return updated;
+    } catch {
+      return [];
+    }
+  },
+
+  getQuestionDraft: (questionId, defaultCode) => {
+    try {
+      const drafts = JSON.parse(getStorage().getItem(STORAGE_KEYS.PRACTICE_DRAFTS) || '{}');
+      return drafts[questionId] !== undefined ? drafts[questionId] : defaultCode;
+    } catch {
+      return defaultCode;
+    }
+  },
+
+  saveQuestionDraft: (questionId, code) => {
+    try {
+      const drafts = JSON.parse(getStorage().getItem(STORAGE_KEYS.PRACTICE_DRAFTS) || '{}');
+      drafts[questionId] = code;
+      getStorage().setItem(STORAGE_KEYS.PRACTICE_DRAFTS, JSON.stringify(drafts));
+    } catch (e) {
+      console.error(e);
+    }
+  },
+
+  resetQuestionDraft: (questionId, defaultCode) => {
+    try {
+      const drafts = JSON.parse(getStorage().getItem(STORAGE_KEYS.PRACTICE_DRAFTS) || '{}');
+      delete drafts[questionId];
+      getStorage().setItem(STORAGE_KEYS.PRACTICE_DRAFTS, JSON.stringify(drafts));
+      return defaultCode;
+    } catch {
+      return defaultCode;
     }
   }
 };

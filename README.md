@@ -31,11 +31,12 @@
    - Celebrates with confetti when an offer is landed!
    - Persisted automatically in browser `localStorage`.
 
-5. **Technical Interview & Prep Corner**:
-   - High-frequency DSA coding patterns (Two pointers, Sliding Window, BFS, Hash Maps) with code snippets.
-   - Google standard XYZ resume bullet formula with real examples.
-   - Step-by-step interview round checklist (pre-round, live coding, behavioral STAR method).
-   - Direct connection to workspace array coding bank (`array_solutions.py`).
+5. **Technical Interview & Live Coding Arena (Prep Corner)**:
+   - **Interactive In-Browser Code IDE**: Write real JavaScript solutions, run automated test suites, inspect inputs/outputs, and debug with `console.log`.
+   - **10 Real IT Interview Questions**: Two Sum, Valid Parentheses, Stock Buy/Sell, Kadane's Algorithm, Longest Substring Without Repeating Characters, Binary Search, Merge Intervals, and more.
+   - **Direct External Platform Links**: One-click jump to LeetCode, GeeksforGeeks, and NeetCode for every problem.
+   - **Progress & Draft Persistence**: Solved statuses and code drafts auto-saved in `localStorage` with celebratory confetti on all tests passed.
+   - High-frequency DSA pattern breakdowns, Google standard XYZ resume bullet blueprints, and full interview checklists.
 
 6. **Post a Job Portal**:
    - Recruiters, campus placement coordinators, and student club leads can submit verified student openings directly.
@@ -92,10 +93,12 @@ it-student-job-portal/
 │   ├── data/
 │   │   ├── itCategories.js        # IT domain definitions, skills, experience levels
 │   │   ├── curatedJobs.js         # Curated IT student & fresher positions
-│   │   └── prepResources.js       # DSA patterns, resume formulas, interview checklist
+│   │   ├── prepResources.js       # DSA patterns, resume formulas, interview checklist
+│   │   └── practiceQuestions.js   # 10 real interview questions, tests, external platform links
 │   ├── services/
 │   │   ├── jobService.js          # Sourcing, match score computation, skill breakdown
-│   │   └── storageService.js      # LocalStorage persistence for bookmarks & tracker
+│   │   ├── storageService.js      # LocalStorage persistence for bookmarks, tracker & code drafts
+│   │   └── codeRunnerService.js   # Safe browser test runner & console log capturer
 │   └── components/
 │       ├── layout/
 │       │   ├── Navbar.jsx         # Header, tab navigation, theme toggle
@@ -111,5 +114,6 @@ it-student-job-portal/
 │       ├── tracker/
 │       │   └── ApplicationTracker.jsx # 5-stage Kanban application board
 │       └── prep/
-│           └── PrepCorner.jsx     # Technical interview preparation corner
+│           ├── PrepCorner.jsx     # Main interview prep view & tab orchestrator
+│           └── CodingArena.jsx    # Interactive in-browser coding IDE & test case runner
 ```
